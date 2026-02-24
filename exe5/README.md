@@ -1,6 +1,6 @@
 # exe 5
 
-Bouncing é um problema encontarado em botões mecânicos, um botão pode ser entendido como um sistema massa mola, que quando apertado vibra e pelo microcontrolador ser muito rápido, ele interpreta isso como várias apertadas.
+Bouncing é um problema encontrado em botões mecânicos, um botão pode ser entendido como um sistema massa mola, que quando apertado vibra e pelo microcontrolador ser muito rápido, ele interpreta isso como várias apertadas.
 
 #### Código
 

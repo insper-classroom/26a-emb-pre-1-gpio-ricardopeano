@@ -11,7 +11,7 @@ const int BTN_GREEN = 26;
 int main() {
   stdio_init_all();
 
-  // LEDs como saída
+  
   gpio_init(LED_GREEN);
   gpio_set_dir(LED_GREEN, GPIO_OUT);
   gpio_put(LED_GREEN, 0);
@@ -20,7 +20,7 @@ int main() {
   gpio_set_dir(LED_RED, GPIO_OUT);
   gpio_put(LED_RED, 0);
 
-  // Botões como entrada (com pull-up)
+  
   gpio_init(BTN_RED);
   gpio_set_dir(BTN_RED, GPIO_IN);
   gpio_pull_up(BTN_RED);
@@ -33,13 +33,13 @@ int main() {
   bool green_on = false;
 
   while (true) {
-    // Botão vermelho (ativo em 0 por causa do pull-up)
+    
     if (!gpio_get(BTN_RED)) {
       red_on = !red_on;
       gpio_put(LED_RED, red_on);
 
-      while (!gpio_get(BTN_RED)) { } // espera soltar
-      sleep_ms(20);                  // pequeno debounce
+      while (!gpio_get(BTN_RED)) { } 
+      sleep_ms(20);                  
     }
 
     // Botão verde
@@ -47,8 +47,8 @@ int main() {
       green_on = !green_on;
       gpio_put(LED_GREEN, green_on);
 
-      while (!gpio_get(BTN_GREEN)) { } // espera soltar
-      sleep_ms(20);                    // pequeno debounce
+      while (!gpio_get(BTN_GREEN)) { } 
+      sleep_ms(20);                    
     }
   }
 }
