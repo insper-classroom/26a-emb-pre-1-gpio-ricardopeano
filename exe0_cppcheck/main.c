@@ -3,9 +3,8 @@
 
 #define NUM_ELEMENTS 5
 
-int multiplyNumbers(int x, int y) {
-    int product = x * y;
-    return product;
+static int multiplyNumbers(int x, int y) {
+    return x * y;
 }
 
 int main(void) {
@@ -18,7 +17,11 @@ int main(void) {
         arr[i] = i;
     }
 
-    printf("%d\n", result);
-
+    int sum = result;
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        sum += arr[i];
+    }
+    printf("%d\n", sum);
+    
     return 0;
 }
